@@ -37,7 +37,7 @@ payload = {
 
 if st.button("Prédire"):
     try:
-        response = requests.post("http://localhost:8000/predict", json=payload)
+        response = requests.post("https://fastapi-ol4d.onrender.com/predict", json=payload)
         if response.ok:
             res = response.json()
             st.success(f"Résultat : {'✅ C2S' if res['prediction']==1 else '❌ Non éligible'}")
